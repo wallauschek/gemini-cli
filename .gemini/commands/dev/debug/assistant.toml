@@ -1,0 +1,71 @@
+description = "Analisa logs de erro, rastreamentos de pilha e fornece estratégias e soluções de depuração sistemáticas."
+prompt = """Ajude a depurar o seguinte problema: {{args}}
+
+Forneça assistência de depuração abrangente:
+
+1. **Análise de Erro:**
+
+   - Analise e interprete a mensagem de erro/rastreamento de pilha
+   - Identifique a causa raiz e a localização do erro
+   - Determine o tipo de erro (sintaxe, tempo de execução, lógico, etc.)
+   - Verifique os commits recentes em busca de causas potenciais: !{git log --oneline -5}
+
+2. **Coleta de Contexto:**
+
+   - Verifique o branch e o status atuais: !{git status --porcelain}
+   - Procure por alterações recentes em arquivos relacionados
+   - Examine os arquivos de log, se disponíveis: !{find . -name "*.log" -newer -1 | head -5}
+   - Verifique a configuração do ambiente
+
+3. **Etapas de Depuração Sistemática:**
+
+   - **Etapa 1:** Reproduza o problema de forma consistente
+   - **Etapa 2:** Isole a seção de código problemática
+   - **Etapa 3:** Adicione instruções estratégicas de log/depuração
+   - **Etapa 4:** Use ferramentas de depuração apropriadas para a pilha de tecnologia
+   - **Etapa 5:** Teste as correções potenciais de forma incremental
+
+4. **Padrões de Problemas Comuns:**
+
+   - Verifique se há erros de referência nula/indefinida
+   - Procure por problemas de manipulação de async/await e Promise
+   - Verifique problemas de escopo de variável e closure
+   - Verifique se há incompatibilidades de tipo e problemas de conversão
+   - Examine conflitos de versão de dependência
+
+5. **Depuração Específica da Tecnologia:**
+
+   - **JavaScript/Node.js:** Verifique os logs do console, use instruções `debugger`
+   - **Python:** Use `pdb`, verifique o traceback com atenção
+   - **Java:** Examine o rastreamento de pilha, verifique problemas de classpath
+   - **Banco de Dados:** Planos de execução de consulta, verifique conexões
+   - **Rede:** Verifique endpoints de API, autenticação, CORS
+
+6. **Ferramentas e Técnicas:**
+
+   - Recomende ferramentas de depuração apropriadas para a pilha de tecnologia
+   - Sugira estratégias de log e instrumentação
+   - Forneça recomendações de posicionamento de breakpoints
+   - Recomende ferramentas de criação de perfil se relacionadas ao desempenho
+
+7. **Etapas de Verificação:**
+
+   - Crie um caso de reprodução mínimo
+   - Teste a correção isoladamente
+   - Verifique se não há regressão na funcionalidade relacionada
+   - Adicione testes para evitar ocorrências futuras
+
+8. **Estratégias de Prevenção:**
+
+   - Sugira melhorias no código para evitar problemas semelhantes
+   - Recomende melhores padrões de tratamento de erros
+   - Identifique validações ou verificações ausentes
+   - Sugira melhorias no monitoramento e alerta
+
+9. **Documentação:**
+   - Documente o processo de depuração para o conhecimento da equipe
+   - Crie um guia de solução de problemas para problemas semelhantes
+   - Atualize a documentação de tratamento de erros
+
+Forneça um plano de depuração passo a passo com comandos, ferramentas e etapas de verificação específicos, adaptados ao erro e à pilha de tecnologia.
+"""
