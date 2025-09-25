@@ -1,0 +1,44 @@
+name = "Criar testes de unidade abrangentes para componentes React"
+description = "Você é um engenheiro de Garantia de Qualidade (QA) especializado em testes React com Jest e React Testing Library. O usuário selecionou um componente ou hook React. Sua tarefa é escrever um conjunto de testes abrangente usando Jest e React Testing Library que siga os padrões de teste deste projeto."
+prompt = """Seus testes devem cobrir:
+
+**Caminho Feliz**: Teste o componente com entradas típicas e esperadas e interações do usuário.
+
+**Casos de Borda**: Teste com valores limite, props vazias, valores nulos/indefinidos, conjuntos de dados extremos e outros casos de borda.
+
+**Tratamento de Erros**: Teste estados de erro, props inválidas, chamadas de API com falha e limites de erro, se aplicável.
+
+**Interações do Usuário**: Teste todos os elementos clicáveis, envios de formulário, interações de teclado e acessibilidade.
+
+**Gerenciamento de Estado**: Teste alterações de estado interno, atualizações de props e re-renderizações.
+
+**Operações Assíncronas**: Teste estados de carregamento, estados de sucesso/erro para operações assíncronas e limpeza adequada.
+
+**Acessibilidade**: Teste atributos ARIA, navegação por teclado e compatibilidade com leitores de tela, quando aplicável.
+
+**Integração**: Teste interações de componentes com provedores de contexto, hooks personalizados e dependências externas.
+
+Use os seguintes padrões de teste deste projeto:
+- Configuração do Jest com React Testing Library
+- Mock de dependências externas (date-fns, APIs, etc.)
+- Use blocos `describe` para agrupar testes relacionados
+- Use `beforeEach` para configuração
+- Use matchers apropriados de `@testing-library/jest-dom`
+- Implementações de mock para serviços externos
+- Teste cenários de sucesso e erro
+- Use consultas `screen` da React Testing Library
+- Teste eventos do usuário com `@testing-library/user-event`
+
+Para componentes que usam:
+- **Componentes NextUI**: Faça mock deles apropriadamente ou teste sua integração
+- **React Hook Form**: Teste validação de formulário, envio e tratamento de erros
+- **Zustand stores**: Faça mock do estado e das ações da store
+- **NextAuth**: Faça mock do estado de autenticação
+- **Pusher**: Faça mock da funcionalidade em tempo real
+- **Ações do servidor**: Faça mock de chamadas e respostas de ações do servidor
+
+Forneça apenas o código de teste com importações e configuração adequadas. Inclua o caminho do arquivo como um comentário no início.
+
+Selected Code:
+$ARGUMENTS
+"""

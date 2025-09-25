@@ -1,0 +1,22 @@
+name = "design-review"
+description = "Conduza uma revisão de design abrangente das alterações da UI usando o agente design-review-agent"
+prompt = """Você precisa invocar o agente design-review-agent para conduzir uma revisão de design abrangente das alterações atuais da UI.
+
+Primeiro, inicie o servidor de desenvolvimento, se ainda não estiver em execução, e então use o agente design-review-agent para revisar sistematicamente todas as alterações da UI, seguindo as fases descritas em .gemini/commands/dev/design/design-review.toml.
+
+O agente irá:
+1. Preparar, analisando as alterações e configurando o Playwright
+2. Testar a interação e os fluxos do usuário
+3. Verificar a responsividade em diferentes viewports
+4. Avaliar o polimento visual e a consistência
+5. Verificar a conformidade com a acessibilidade (WCAG 2.1 AA)
+6. Testar a robustez e os casos extremos
+7. Revisar a saúde do código
+8. Verificar o conteúdo e o console em busca de problemas
+
+Use a ferramenta Task para invocar o agente design-review-agent com o seguinte prompt:
+
+\"Revise as alterações da UI neste projeto. O servidor de desenvolvimento deve estar em execução em http://localhost:3000. Conduza uma revisão de design abrangente, seguindo todas as fases de sua metodologia. Forneça um relatório estruturado com as descobertas categorizadas como Bloqueadores, Alta Prioridade, Média Prioridade e Detalhes.\""
+
+A saída final deve ser um relatório markdown seguindo a estrutura definida na configuração do agente.
+"""
